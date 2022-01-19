@@ -25,6 +25,7 @@ const getMissionsQuery = gql`
     links {
       article_link
       video_link
+      flickr_images
     }
     rocket {
       rocket_name
@@ -32,7 +33,6 @@ const getMissionsQuery = gql`
         cores {
           flight
           core {
-            reuse_count
             status
           }
         }
@@ -41,7 +41,6 @@ const getMissionsQuery = gql`
         payloads {
           payload_type
           payload_mass_kg
-          payload_mass_lbs
         }
       }
     }

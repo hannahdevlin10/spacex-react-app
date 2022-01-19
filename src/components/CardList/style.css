@@ -39,13 +39,13 @@ h1 {
   padding: 1rem;
 }
 
-@media (min-width: 58rem) {
+@media (min-width: 70rem) {
   .cards_item {
     width: 50%;
   }
 }
 
-@media (min-width: 58rem) {
+@media (min-width: 70rem) {
   .cards_item {
     width: 50%;
   }
@@ -84,4 +84,10 @@ h1 {
   line-height: 1.5;
   margin-bottom: 1.25rem;    
   font-weight: 400;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
 }

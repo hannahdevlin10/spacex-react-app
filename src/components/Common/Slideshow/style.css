@@ -1,0 +1,26 @@
+.slideshow-container {
+    padding: 38px 20px 20px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+.slideshow-controls {
+    position: absolute;
+    margin: 0;
+    padding: 0px;
+}
+.slideshow-container .slideshow-controls .control-icon {
+    color: white;
+    font-size: 38px;
+}
+.slideshow {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+}
+.slideshow img {
+    max-height: 480px;
+    max-width: 700px;
+    object-fit: contain;
+    margin-bottom: 45px;
+}

@@ -1,33 +1,27 @@
-import React, { useContext } from 'react'
-import { MissionsContext } from '../../context/MissionsContext'
+import React from 'react'
+import { dateConverter } from '../../utils/dateConverter'
 import { CardItem } from './CardItem/CardItem'
 import './style.css'
 
-const CardList = () => {
-    const { missions, setSelectedMission } = useContext(MissionsContext);
-
-    const formatDate = (dateToConvert) => {
-        function pad(s) {
-            return (s < 10) ? '0' + s : s
-        }
-        let d = new Date(dateToConvert)
-        return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/')
-    }
-
-    const handleClick = (missionClicked) => {
-        setSelectedMission(missionClicked)
-    }
-
+const CardList = ({ options, onCardClick, cardListType }) => {
     return (
         <>
             <ul className="cards">
-                {missions?.map((mission) => (
-                    <CardItem
-                        id={mission?.id}
-                        onClick={() => handleClick(mission)}
-                        title={mission?.mission_name} 
-                        description={mission?.details}
-                        date={formatDate(mission?.launch_date_local)} />
+                {options?.map((option) => (
+                    cardListType === 'missions' ? (
+                        <CardItem
+                            id={option?.id}
+                            onClick={() => onCardClick(option)}
+                            title={option?.mission_name} 
+                            description={option?.details}
+                            date={dateConverter(option?.launch_date_local)} />
+                    ) : cardListType === 'ships' ? (
+                        <CardItem
+                            id={option?.name}
+                            title={option?.name} 
+                            description={option?.home_port} 
+                            image={option?.image} />
+                        ) : ('')
                 ))}
             </ul>
         </>

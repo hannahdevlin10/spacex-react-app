@@ -9,6 +9,7 @@
     font-size: 38px;
     padding: 40px 0px;
     width: 96%;
+    margin-left: 25px;
 }
 .view-mission-section-text {
     background-color: rgba(255, 255, 255, 0.1);
@@ -20,63 +21,3 @@
     font-size: 30px;
     padding: 40px 0px;
 }
-.ships {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .ships_item {
-    display: flex;
-    padding: 1rem;
-  }
-  
-  @media (min-width: 40rem) {
-    .ships_item {
-      width: 50%;
-    }
-  }
-  
-  @media (min-width: 56rem) {
-    .ships_item {
-      width: 33.3333%;
-    }
-  }
-  
-  .ship {
-    border-radius: 0.25rem;
-    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  img {
-    height: auto;
-    max-width: 100%;
-    vertical-align: middle;
-  }
-  
-  .ship_content {
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-  
-  .ship_title {
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    margin: 0px;
-  }
-  
-  .ship_text {
-    color: #ffffff;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    margin-bottom: 1.25rem;    
-    font-weight: 400;
-  }

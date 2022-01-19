@@ -1,0 +1,12 @@
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 70px;
+}
+
+.dashboard-header {
+    color: white;
+    text-align: center;
+    font-size: 38px;
+    padding: 40px 0px;
+}

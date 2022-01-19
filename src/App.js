@@ -1,8 +1,17 @@
 import React, { useContext, useEffect } from "react";
 import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
-import CardList from './components/CardList/CardList'
 import { MissionsContext } from "./context/MissionsContext";
+import { Nav } from "./components/Nav/Nav";
+import { Dashboard } from "./components/Dashboard/Dashboard";
+import { ViewMission } from "./components/ViewMission/ViewMission";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 const endpoint = "https://api.spacex.land/graphql/";
 const getMissionsQuery = gql`
@@ -42,12 +51,13 @@ const getMissionsQuery = gql`
       image
     }
     details
+    id
   }
 }
 `;
 
-const App = () => {
-  const { setMissions } = useContext(MissionsContext);
+function App () {
+  const { setMissions, selectedMission } = useContext(MissionsContext);
   
   const { data, isLoading, error } = useQuery("launches", () => {
     return request(endpoint, getMissionsQuery);
@@ -63,15 +73,19 @@ const App = () => {
   if (error) return <pre>{error.message}</pre>;
 
   return (
-    <div>
-      <h1>SpaceX Missions</h1>
-      {/* <ul>
-        {data.launchesPast.map((launch, i) => (
-          <li key={i}>{launch.mission_name}</li>
-        ))}
-      </ul> */}
-      <CardList />
-    </div>
+    <Router>
+      <div className="app">
+        <Nav />
+          <Switch>
+            <Route exact path='/' component={Dashboard} />
+            {!selectedMission ? (
+              <Redirect to='/' />
+            ): (
+              <Route exact path='/mission/:id' component={ViewMission} />
+            )}
+          </Switch>
+      </div>
+    </Router>
   );
 }
 

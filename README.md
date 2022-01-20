@@ -68,3 +68,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Technologies Used
+## React JS
+### Reasons for usage
+- Component Based Development: The resuability of components reduces project size and development time spent on building user interfaces
+- Libarary / Package Compatibility: there is a huge ecosystem of packages and libraries available to use with React JS
+- Virtual DOM: the Virtual DOM saves on development time with only updated DOM elements being updated when changes are made as opposed to the real DOM which updates entirely
+## React Testing Library
+### Reasons for usage
+- Testing library included in React JS (no need to install independently)
+- Straightforward syntax and gentle learning curve
+- Reliable tests and functions available
+## GraphQL
+### Reasons for usage
+- Allows you to fetch data with a single API call (improves application performance)
+- Allows you to specifiy exact data you need in a single request
+## Material UI
+- Wide range of highly customizable components
+- Wide range of icons
+- Easy to install 
+
+# Future Improvements
+- More testing using React Testing Library / Jest
+- More interactive features (i.e. sorting / filtration through data)
+- Light / dark mode 

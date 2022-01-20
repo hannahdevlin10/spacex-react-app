@@ -7,10 +7,11 @@ const CardList = ({ options, onCardClick, cardListType }) => {
     return (
         <>
             <ul className="cards">
-                {options?.map((option) => (
+                {options?.map((option, key) => (
                     cardListType === 'missions' ? (
                         <CardItem
                             id={option?.id}
+                            key={key}
                             onClick={() => onCardClick(option)}
                             title={option?.mission_name} 
                             description={option?.details}
@@ -18,7 +19,9 @@ const CardList = ({ options, onCardClick, cardListType }) => {
                     ) : cardListType === 'ships' ? (
                         <CardItem
                             id={option?.name}
+                            key={key}
                             title={option?.name} 
+                            onClick={() => onCardClick(option)}
                             description={option?.home_port} 
                             image={option?.image} />
                         ) : ('')

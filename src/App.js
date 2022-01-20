@@ -3,8 +3,9 @@ import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 import { MissionsContext } from "./context/MissionsContext";
 import { Nav } from "./components/Nav/Nav";
-import { Dashboard } from "./components/Dashboard/Dashboard";
+import { MissionList } from "./components/MissionList/MissionList";
 import { ViewMission } from "./components/ViewMission/ViewMission";
+import LoadingScreen from "./components/Common/LoadingScreen/LoadingScreen";
 
 import {
   BrowserRouter as Router,
@@ -35,6 +36,7 @@ const getMissionsQuery = gql`
           core {
             status
           }
+          land_success
         }
       }
       second_stage {
@@ -68,7 +70,7 @@ function App () {
     }
   }, [data?.launchesPast])
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <LoadingScreen />
   if (error) return <pre>{error.message}</pre>;
 
   return (
@@ -76,7 +78,7 @@ function App () {
       <div className="app">
         <Nav />
           <Switch>
-            <Route exact path='/' component={Dashboard} />
+            <Route exact path='/' component={MissionList} />
             {!selectedMission ? (
               <Redirect to='/' />
             ): (

@@ -3,7 +3,7 @@ import { MissionsContext } from '../../context/MissionsContext';
 import CardList from '../CardList/CardList';
 import './style.css';
 
-export const Dashboard = () => {
+export const MissionList = () => {
     const { missions, setSelectedMission } = useContext(MissionsContext);
 
     const handleClick = (missionClicked) => {
@@ -11,9 +11,9 @@ export const Dashboard = () => {
     }
 
     return (
-        <div className="dashboard-container">
+        <div className="mission-list-container">
             <div style={{ width: '75%' }}>  
-                <div className="dashboard-header">
+                <div className="mission-list-header">
                     Last Launches
                 </div>
                 <CardList options={missions} onCardClick={handleClick} cardListType="missions" />

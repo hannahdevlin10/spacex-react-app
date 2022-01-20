@@ -1,0 +1,15 @@
+.subheader-container {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white;
+    font-size: 18px; 
+    border-radius: 5px;
+}
+.subheader-row {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+.subheader-icon {
+    padding: 0px 5px;
+}

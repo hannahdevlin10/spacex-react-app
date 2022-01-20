@@ -1,21 +1,26 @@
-.slideshow-container {
+.slideshow-container-outer {
+    display: flex;
+    justify-content: center;
+}
+.slideshow-container-inner {
     padding: 38px 20px 20px 20px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
+    width: 75%;
 }
 .slideshow-controls {
     position: absolute;
     margin: 0;
     padding: 0px;
 }
-.slideshow-container .slideshow-controls .control-icon {
+.slideshow-controls .control-icon {
     color: white;
     font-size: 38px;
 }
 .slideshow {
     display: flex;
     justify-content: center;
-    width: 75%;
+    width: 70%;
     margin: auto;
 }
 .slideshow img {

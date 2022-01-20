@@ -1,10 +1,10 @@
-.dashboard-container {
+.mission-list-container {
     display: flex;
     justify-content: center;
     padding-bottom: 70px;
 }
 
-.dashboard-header {
+.mission-list-header {
     color: white;
     text-align: center;
     font-size: 38px;

@@ -5,9 +5,11 @@ import './style.css';
 export const Nav = () => {
     return (
         <div className="nav-container">
-            <Link to='/'>
-                <h1>SpaceX Launch App 🚀</h1>
-            </Link>
+            <h1>
+                <Link to='/'>
+                    SpaceX Launch App 🚀
+                </Link>
+            </h1>
         </div>
     )
 }

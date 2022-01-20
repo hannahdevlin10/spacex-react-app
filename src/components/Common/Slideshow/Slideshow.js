@@ -18,37 +18,39 @@ export default function SlideShow ({ images, loop }) {
     }
 
     return (
-        <div className="slideshow-container">
-            <div className="slideshow-controls">
-                {!isPlaying ? (
-                    <Tooltip title="Play Slideshow" onClick={handleControlClick}>
-                        <IconButton>
-                            <PlayCircleOutline className="control-icon" />
-                        </IconButton>
-                    </Tooltip>
-                    ) : (
-                    <Tooltip title="Pause Slideshow" onClick={handleControlClick}>
-                        <IconButton>
-                            <PauseCircleOutline className="control-icon" />
-                        </IconButton>
-                    </Tooltip>
-                    )
-                }
-            </div>
-            <div className="slideshow">
-                <Carousel
-                    showStatus={false}
-                    showArrows={false}
-                    autoPlay={isPlaying}
-                    infiniteLoop={loop}
-                    interval={3000}
-                    showThumbs={false}>
-                        {images?.map((image) => (
-                            <div>
-                                <img src={image} alt="slideshow-img" />
-                            </div>
-                        ))}
-                </Carousel>
+        <div className="slideshow-container-outer">
+            <div className="slideshow-container-inner">
+                <div className="slideshow-controls">
+                    {!isPlaying ? (
+                        <Tooltip title="Play Slideshow" onClick={handleControlClick}>
+                            <IconButton>
+                                <PlayCircleOutline className="control-icon" />
+                            </IconButton>
+                        </Tooltip>
+                        ) : (
+                        <Tooltip title="Pause Slideshow" onClick={handleControlClick}>
+                            <IconButton>
+                                <PauseCircleOutline className="control-icon" />
+                            </IconButton>
+                        </Tooltip>
+                        )
+                    }
+                </div>
+                <div className="slideshow">
+                    <Carousel
+                        showStatus={false}
+                        showArrows={false}
+                        autoPlay={isPlaying}
+                        infiniteLoop={loop}
+                        interval={3000}
+                        showThumbs={false}>
+                            {images?.map((image) => (
+                                <div>
+                                    <img src={image} alt="slideshow-img" />
+                                </div>
+                            ))}
+                    </Carousel>
+                </div>
             </div>
         </div>
     )

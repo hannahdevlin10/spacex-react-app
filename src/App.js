@@ -68,6 +68,7 @@ function App () {
     if (data?.launchesPast && !isLoading && !error) {
       setMissions(data?.launchesPast)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data?.launchesPast])
 
   if (isLoading) return <LoadingScreen />

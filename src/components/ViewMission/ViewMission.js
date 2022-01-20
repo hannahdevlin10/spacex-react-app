@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { MissionsContext } from '../../context/MissionsContext'
+
 import CardList from '../CardList/CardList';
 import SlideShow from '../Common/Slideshow/Slideshow';
 import SubHeader from '../Common/SubHeader/SubHeader';
 import { RocketDetail } from './RocketDetail/RocketDetail';
+
 import { Box, IconButton, Modal, Popover, Tooltip } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import ArticleIcon from '@mui/icons-material/Article';
@@ -41,10 +43,10 @@ export const ViewMission = () => {
                     <div className="view-mission-header">
                         {selectedMission?.mission_name}
                     </div>
-                    <div style={{ display: !selectedMission?.links.article_link && !selectedMission?.links.video_link ? 'none' : 'flex', width: '3%', margin: 'auto', paddingTop: 0, paddingBottom: 0 }}>
-                        <Tooltip title="Details">
+                    <div className="more-info-icon" style={{ display: !selectedMission?.links.article_link && !selectedMission?.links.video_link ? 'none' : 'flex'}}>
+                        <Tooltip title="More Info">
                             <IconButton onClick={handlePopoverClick} >
-                                <MoreHorizIcon aria-describedby={id} style={{ color: 'white', fontSize: 32 }}>
+                                <MoreHorizIcon className="icon" aria-describedby={id}>
                                     See More
                                 </MoreHorizIcon>
                             </IconButton>
@@ -56,24 +58,23 @@ export const ViewMission = () => {
                             onClose={handlePopoverClose}
                             anchorOrigin={{
                                 vertical: 'bottom',
-                                horizontal: 'center',
+                                horizontal: 'left',
                             }}
                             transformOrigin={{
-                                vertical: 'center',
-                                horizontal: 'center',
-                            }}
-                        >
-                            <div style={{ fontSize: 18, padding: '12px' }}>
+                                vertical: 'left',
+                                horizontal: 'right',
+                            }}>
+                            <div className="more-info-container">
                                 {selectedMission?.links.article_link &&
                                     <div className="more-info-link-item">
                                         <ArticleIcon />
-                                        <a href={selectedMission?.links.article_link} style={{ paddingLeft: '10px' }}>View Article</a>
+                                        <a href={selectedMission?.links.article_link}>View Article</a>
                                     </div>
                                 }
                                 {selectedMission?.links.video_link &&
                                     <div className="more-info-link-item">
                                         <YouTubeIcon style={{ color: 'red' }} />
-                                        <a href={selectedMission?.links.video_link} style={{ paddingLeft: '10px' }}>Watch Video</a>
+                                        <a href={selectedMission?.links.video_link}>Watch Video</a>
                                     </div>
                                 }
                             </div>
@@ -85,8 +86,7 @@ export const ViewMission = () => {
                 </div>
                 {selectedMission?.links?.flickr_images?.length ? (
                     <SlideShow auto={true} loop={true} images={selectedMission?.links?.flickr_images} />
-                    ) : ('')
-                }
+                    ) : ('')}
                 {selectedMission?.details && 
                     <div className="view-mission-section-text">
                         {selectedMission?.details}
@@ -100,8 +100,7 @@ export const ViewMission = () => {
                             <CardList onCardClick={handleModalOpen} options={selectedMission?.ships} cardListType="ships" />
                         </div>
                     </div>
-                    ) : ('')
-                }
+                    ) : ('')}
                 <Modal open={modalOpen} onClose={handleModalClose}>
                     <Box className="modal-container">
                         <div className="modal-content">

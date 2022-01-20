@@ -58,7 +58,7 @@ const getMissionsQuery = gql`
 `;
 
 function App () {
-  const { setMissions, selectedMission } = useContext(MissionsContext);
+  const { setMissions, selectedMission, missions } = useContext(MissionsContext);
   
   const { data, isLoading, error } = useQuery("launches", () => {
     return request(endpoint, getMissionsQuery);
@@ -82,9 +82,9 @@ function App () {
             <Route exact path='/' component={MissionList} />
             {!selectedMission ? (
               <Redirect to='/' />
-            ): (
+            ) : missions ? (
               <Route exact path='/mission/:id' component={ViewMission} />
-            )}
+            ) : ('')}
           </Switch>
       </div>
     </Router>

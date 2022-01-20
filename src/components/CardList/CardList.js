@@ -1,5 +1,5 @@
 import React from 'react'
-import { dateConverter } from '../../utils/dateConverter'
+import { dateConverter } from '../../utils/dateConverter/dateConverter'
 import { CardItem } from './CardItem/CardItem'
 import './style.css'
 

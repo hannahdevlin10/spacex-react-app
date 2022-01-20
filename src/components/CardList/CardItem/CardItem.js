@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { textShortener } from '../../../utils/textShortener/textShortener';
 import NoDescription from '../../Common/NoDescription/NoDescription';
-import { shortener } from '../../../utils/textShortener';
 import './style.css'
 
 export const CardItem = ({ id, title, description, date, onClick, image }) => {
@@ -13,7 +13,7 @@ export const CardItem = ({ id, title, description, date, onClick, image }) => {
                     <h2 className="card-title">{title && title}</h2>
                     <p className="card-text">
                         {description
-                            ? shortener(description, 200)
+                            ? textShortener(description, 200)
                             : <NoDescription />}
                     </p>
                     <div className="card-date" style={{ textAlign: 'right' }}>

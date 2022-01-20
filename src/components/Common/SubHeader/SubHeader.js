@@ -1,5 +1,5 @@
 import React from 'react'
-import { dateConverter } from '../../../utils/dateConverter'
+import { dateConverter } from '../../../utils/dateConverter/dateConverter'
 import FmdGoodIcon from '@mui/icons-material/FmdGood'
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
 import { Tooltip } from '@mui/material'

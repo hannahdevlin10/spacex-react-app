@@ -26,29 +26,6 @@
     font-size: 30px;
     padding: 40px 0px;
 }
-.more-info-container {
-    font-size: 18px;
-    padding: 12px;
-}
-.more-info-icon {
-    width: 3%;
-    margin: auto;
-}
-.more-info-icon .icon {
-    color: white;
-    font-size: 32px;
-}
-.more-info-link-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 0px;
-}
-.more-info-link-item a {
-    padding-left: 10px;
-}
-.more-info-link-item a:hover {
-    color: #6522d0;
-}
 .subheader-main-container {
     justify-content: center;
     display: flex;

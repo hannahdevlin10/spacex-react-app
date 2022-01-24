@@ -11,11 +11,12 @@ export const CardItem = ({ id, title, description, date, onClick, image }) => {
             <div className="card" id={id} onClick={onClick && onClick} >
                 <div className="card-content">
                     <h2 className="card-title">{title && title}</h2>
-                    <p className="card-text">
-                        {description
-                            ? textShortener(description, 200)
-                            : <NoDescription />}
-                    </p>
+                    {description ? 
+                        <p className="card-text">
+                            {textShortener(description, 200)}
+                        </p> 
+                        : <NoDescription />
+                    }
                     <div className="card-date" style={{ textAlign: 'right' }}>
                         {date && date}
                     </div>

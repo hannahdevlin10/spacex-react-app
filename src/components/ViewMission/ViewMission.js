@@ -4,12 +4,11 @@ import { MissionsContext } from '../../context/MissionsContext'
 import CardList from '../CardList/CardList';
 import SlideShow from '../Common/Slideshow/Slideshow';
 import SubHeader from '../Common/SubHeader/SubHeader';
+import { HeaderSection } from './HeaderSection/HeaderSection';
 import { RocketDetail } from './RocketDetail/RocketDetail';
-
 import { Box, Modal } from '@mui/material';
 
 import './style.css'
-import { HeaderSection } from './HeaderSection/HeaderSection';
 
 export const ViewMission = () => {
     const { selectedMission } = useContext(MissionsContext);
@@ -35,12 +34,12 @@ export const ViewMission = () => {
                         launchSite={selectedMission?.launch_site?.site_name_long} />
                 </div>
 
-                {selectedMission?.links?.flickr_images?.length && (
+                {selectedMission?.links?.flickr_images?.length && 
                     <SlideShow
                         auto={true}
                         loop={true}
                         images={selectedMission?.links?.flickr_images} />
-                )}
+                }
 
                 {selectedMission?.details && 
                     <div className="view-mission-section-text">
@@ -48,18 +47,20 @@ export const ViewMission = () => {
                     </div>
                 }
 
-                {selectedMission?.ships?.length && (
+                {selectedMission?.ships?.length && 
                     <div style={{ marginBottom: 60 }}>
                         <hr></hr>
                         <div style={{ textAlign: 'center' }}>
-                            <div className="view-mission-subheader">Mission Ships</div>
+                            <div className="view-mission-subheader">
+                                Mission Ships
+                            </div>
                             <CardList
                                 onCardClick={handleModalOpen}
                                 options={selectedMission?.ships}
                                 cardListType="ships" />
                         </div>
                     </div>
-                )}
+                }
 
                 <Modal open={modalOpen} onClose={handleModalClose}>
                     <Box className="modal-container">
